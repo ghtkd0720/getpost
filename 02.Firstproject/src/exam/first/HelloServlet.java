@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class HelloServlet
  */
-@WebServlet("/a.first")
+@WebServlet("/HelloServlet")
 public class HelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -28,9 +28,16 @@ public class HelloServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub\
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.print("hello");
+		String name = request.getParameter("name");
+		String id = request.getParameter("id");
+		String pwd = request.getParameter("pwd");
+		out.print("get");
+		out.print("post<br>");
+		out.print("이름: " + name + "<br>");
 	}
 
 	/**
@@ -38,6 +45,18 @@ public class HelloServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		String name = request.getParameter("name");
+		String id = request.getParameter("id");
+		String pwd = request.getParameter("pwd");
+		out.print("post<br>");
+		out.print("이름: " + name + "<br>");
+		//out.print("</html>");
+	
+		
+		
 	}
 
 }
